@@ -1,0 +1,63 @@
+# pista.x0 = posicao (m) do inicio do obstaculo, medida a partir do eixo dianteiro em t=0.
+# acel = lista de [t_ini, t_fim, ax (m/s2)] ; ax < 0 = frenagem.
+ensaios:
+  lombada_20kmh:
+    descricao: Lombada 80 mm x 1,5 m a 20 km/h
+    T: 4.0
+    v0_kmh: 20
+    acel: []
+    pista: {tipo: lombada, altura: 0.08, comprimento: 1.5, x0: 3.0}
+  lombada_40kmh:
+    descricao: Lombada 80 mm x 1,5 m a 40 km/h
+    T: 4.0
+    v0_kmh: 40
+    acel: []
+    pista: {tipo: lombada, altura: 0.08, comprimento: 1.5, x0: 5.0}
+  buraco_30kmh:
+    descricao: Buraco 80 mm x 0,6 m a 30 km/h
+    T: 4.0
+    v0_kmh: 30
+    acel: []
+    pista: {tipo: buraco, profundidade: 0.08, comprimento: 0.6, rampa: 0.1, x0: 4.0}
+  buraco_50kmh:
+    descricao: Buraco 80 mm x 0,6 m a 50 km/h
+    T: 4.0
+    v0_kmh: 50
+    acel: []
+    pista: {tipo: buraco, profundidade: 0.08, comprimento: 0.6, rampa: 0.1, x0: 8.0}
+  degrau_15kmh:
+    descricao: Degrau de 50 mm a 15 km/h
+    T: 4.0
+    v0_kmh: 15
+    acel: []
+    pista: {tipo: degrau, altura: 0.05, rampa: 0.2, x0: 3.0}
+  senoidal_ressonancia:
+    descricao: Senoidal 20 mm, ~1,3 Hz (proxima da freq. natural da massa suspensa) a 50 km/h
+    T: 12.0
+    v0_kmh: 50
+    acel: []
+    pista: {tipo: senoidal, amplitude: 0.02, comprimento_onda: 10.7, x0: 0.0}
+  iso8608_classeC_60kmh:
+    descricao: Pista aleatoria ISO 8608 classe C a 60 km/h
+    T: 20.0
+    v0_kmh: 60
+    acel: []
+    pista: {tipo: iso8608, classe: C, semente: 42, comprimento: 500.0}
+  frenagem_plana:
+    descricao: Frenagem de 60 km/h com -6 m/s2 em pista plana
+    T: 6.0
+    v0_kmh: 60
+    acel: [[1.0, 4.0, -6.0]]
+    pista: {tipo: plana}
+  aceleracao_plana:
+    descricao: Aceleracao a partir do repouso com +3 m/s2 em pista plana
+    T: 6.0
+    v0_kmh: 0
+    acel: [[1.0, 4.0, 3.0]]
+    pista: {tipo: plana}
+  lombada_frenagem:
+    descricao: Lombada 80 mm a ~40 km/h frenando com -4 m/s2
+    T: 4.0
+    v0_kmh: 40
+    acel: [[0.0, 3.0, -4.0]]
+    pista: {tipo: lombada, altura: 0.08, comprimento: 1.5, x0: 8.0}

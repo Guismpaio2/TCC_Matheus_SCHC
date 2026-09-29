@@ -1,0 +1,13 @@
+[project]
+name = "tcc-suspensao"
+version = "0.1.0"
+description = "Half-car 4 GDL: impacto da altura do CG em conforto, seguranca e durabilidade"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "matplotlib", "pandas", "pyyaml"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
